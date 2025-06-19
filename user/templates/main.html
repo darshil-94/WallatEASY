@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to WalletEase 💼</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #636e72;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .signin {
+            background-color: #4e8cff;
+            color: white;
+        }
+
+        .signin:hover {
+            background-color: #2c6ed5;
+        }
+
+        .signup {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .signup:hover {
+            background-color: #27ae60;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .emoji {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">👋</div>
+        <h1>Welcome to <strong>WalletEase</strong> 💼</h1>
+        <p>
+            Manage your personal finances effortlessly. <br>
+            Track income 💰, monitor spending 🛒, and stay in control of your budget 📊 with our simple, secure wallet system.
+        </p>
+        <div class="buttons">
+            <a href="/signin/" class="signin">🔐 Sign In</a>
+            <a href="/signup/" class="signup">📝 Sign Up</a>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 WalletEase. All rights reserved.
+    </footer>
+</body>
+</html>

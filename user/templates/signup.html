@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📝 Sign Up</title>
+    <style>
+        body {
+            background: #e0f2fe;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #0284c7;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px #94a3b8;
+        }
+        input {
+            display: block;
+            margin: 10px 0;
+            padding: 12px;
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        input[type="submit"] {
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        a {
+            margin-top: 10px;
+            color: #0369a1;
+        }
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sign Up Here with your Username! ✍️</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form action="/signup/" method="post">
+        {% csrf_token %}
+        <input type="text" name="Username" placeholder="Username" required />
+        <input type="password" name="Password" placeholder="Password" required />
+        <input type="submit" value="Sign Up" />
+    </form>
+    <a href="/signin/">🔑 Back to Login</a>
+    <a href="/"> Main Page</a>
+</body>
+</html>

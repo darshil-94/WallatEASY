@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>👛 Wallet Options</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ecfdf5, #cffafe);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+        }
+
+        .logout {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .logout a {
+            background-color: #10b981;
+            color: white;
+            padding: 12px 20px;
+            font-size: 15px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .logout a:hover {
+            background-color: #059669;
+            transform: scale(1.05);
+        }
+
+        .container {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0f766e;
+            margin-bottom: 40px;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button-row a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 120px;
+            font-size: 18px;
+            background-color: #14b8a6;
+            color: white;
+            border-radius: 16px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .button-row a:hover {
+            background-color: #0e7490;
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logout">
+        <a href="/dashboard/">🏠 Dashboard</a>
+    </div>
+
+    <div class="container">
+        <h1>👛 What Would You Like To Do?</h1>
+
+        <div class="button-row">
+            <a href="/balance/">🧮<br>Check Balance</a>
+            <a href="/history/">📜<br>Transaction History</a>
+        </div>
+    </div>
+
+</body>
+</html>

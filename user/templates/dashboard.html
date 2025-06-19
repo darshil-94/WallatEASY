@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🏠 Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f0f4f8, #dbeafe);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+        }
+
+        .logout {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .logout button {
+            background-color: #ef4444;
+            color: white;
+            padding: 12px 20px;
+            font-size: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .logout button:hover {
+            background-color: #dc2626;
+            transform: scale(1.05);
+        }
+
+        .container {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 40px;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button-row form {
+            flex: 1;
+            min-width: 180px;
+            max-width: 220px;
+        }
+
+        .button-row button {
+            width: 100%;
+            height: 120px;
+            background-color:  Grey	;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .button-row button:hover {
+            background-color: #2563eb;
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔒 Logout Button -->
+    <div class="logout">
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">🔒 Logout</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h1>👋 Welcome, {{ username }} – Your Wallet Dashboard 💼</h1>
+
+        <!-- 💳 Row of Big Buttons -->
+        <div class="button-row">
+            <form action="/wallet/" method="get">
+                <button type="submit">👛<br>Wallet</button>
+            </form>
+
+            <form action="/Payment/" method="get">
+                <button type="submit">💸<br>Payment</button>
+            </form>
+
+            <form action="/analysis/" method="get">
+                <button type="submit">📊<br>Analysis</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

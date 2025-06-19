@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🧮 Wallet Balance</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #d1fae5, #e0f2fe);
+            padding: 50px;
+            text-align: center;
+            background-image: url('https://www.transparenttextures.com/patterns/white-wall.png');
+        }
+
+        h2 {
+            color: #0f766e;
+            font-size: 32px;
+        }
+
+        .balance-box {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 30px 60px;
+            background-color: #10b981;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .balance-box:hover {
+            transform: scale(1.05);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 24px;
+            background-color: #2563eb;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🧮 Wallet Balance</h2>
+
+    <div class="balance-box">
+        ₹{{ balance }}
+    </div>
+
+    <br>
+    <a href="/wallet/">🔙 Back to Wallet</a>
+
+</body>
+</html>

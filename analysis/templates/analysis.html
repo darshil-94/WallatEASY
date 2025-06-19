@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📊 Expense Analysis</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #fdfcdc, #e0f7fa);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-image: url('https://www.transparenttextures.com/patterns/graphy.png');
+            min-height: 100vh;
+        }
+
+        .logout {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .logout a {
+            background-color: #ef4444;
+            color: white;
+            padding: 12px 22px;
+            font-size: 15px;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        .logout a:hover {
+            background-color: #dc2626;
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 80px;
+            color: #1e40af;
+        }
+
+        h3 {
+            margin: 20px 0;
+            font-size: 22px;
+            color: #2563eb;
+        }
+
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        .chart-box {
+            width: 420px;
+            background: #ffffffcc;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .chart-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .back {
+            display: inline-block;
+            margin: 40px 0;
+            padding: 12px 24px;
+            background-color: #10b981;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .back:hover {
+            background-color: #059669;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔒 Logout -->
+    <div class="logout">
+        <a href="/dashboard/">🏠 Dashboard</a>
+    </div>
+
+    <h2>📊 Hello {{ username }} – Your Expense Insights</h2>
+
+    <div class="chart-container">
+        {% if pie_chart %}
+            <div class="chart-box">
+                <h3>🥧 Product-wise Expense Distribution</h3>
+                <img src="data:image/png;base64,{{ pie_chart }}" alt="Product Pie Chart">
+            </div>
+        {% endif %}
+
+        {% if scatter_chart %}
+            <div class="chart-box">
+                <h3>📌 Product-wise Expense (Scatter View)</h3>
+                <img src="data:image/png;base64,{{ scatter_chart }}" alt="Product Scatter Plot">
+            </div>
+        {% endif %}
+    </div>
+
+    {% if not pie_chart and not scatter_chart %}
+        <p>📌 No chart data available for display.</p>
+    {% endif %}
+
+
+</body>
+</html>
