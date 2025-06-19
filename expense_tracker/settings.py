@@ -25,9 +25,11 @@ SECRET_KEY = "django-insecure-!v0ff@rkdgf3f8v(-lp0px5lpkmbgrdmm-u$(=r1oszf7lex7-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-
+import os
+DEBUG = os.environ.get("DEBUG", "False") == "True"
+SECRET_KEY = os.environ.get("SECRET_KEY", "changeme")
 # Application definition
 
 INSTALLED_APPS = [
@@ -53,6 +55,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "expense_tracker.urls"
+
+MIDDLEWARE = ['whitenoise.middleware.WhiteNoiseMiddleware', ...]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 TEMPLATES = [
     {
